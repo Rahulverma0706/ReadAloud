@@ -54,7 +54,7 @@ ReadAloud is a web application inspired by Audible that allows users to upload b
 
 The project is deployed on [Vercel](https://vercel.com) and [Render](https://render.com) for easy access. 
 
-Live demo: [ReadAloud Demo]([https://readaloud-tbqf.onrender.com](https://read-aloud-five.vercel.app/))
+Live demo: [ReadAloud Demo]((https://read-aloud-five.vercel.app/))
 
 ## Contributing
 
