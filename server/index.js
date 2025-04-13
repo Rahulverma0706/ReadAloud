@@ -16,12 +16,7 @@ app.post("/upload", upload.single("book"), (req, res) => {
   console.log("📥 Received upload:", req.file.filename);
   const filePath = req.file.path;
   
-axios.post('http://localhost:5000/upload', formData, {
-  onUploadProgress: (progressEvent) => {
-    const percent = Math.round((progressEvent.loaded * 100) / progressEvent.total);
-    setUploadProgress(percent);
-}
-  })
+
   fs.readFile(filePath, "utf8", (err, data) => {
     if (err) return res.status(500).send("Error reading file");
 
