@@ -28,7 +28,7 @@ app.post("/upload", upload.single("book"), (req, res) => {
           return res.status(500).send("Text-to-Speech conversion failed.");
         }
 
-        res.json({ audioUrl: `http://localhost:5000/audios/${fileName}` });
+        res.json({ audioUrl: `https://readaloud-tbqf.onrender.com/audios/${fileName}` });
       });
     } catch (e) {
       console.error("Unexpected error:", e);
