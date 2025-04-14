@@ -20,7 +20,7 @@ function App() {
     setLoading(true);
 
     try {
-      const res = await axios.post('http://localhost:5000/upload', formData);
+      const res = await axios.post('"https://readaloud-tbqf.onrender.com/upload", formData);
       setAudioUrl(res.data.audioUrl);
       setLoading(false);
       alertSound.current.play(); // 🎉 Play success alert sound
