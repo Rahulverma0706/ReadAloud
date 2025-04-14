@@ -9,7 +9,7 @@ function App() {
   const audioRef = useRef(null);
   const alertSound = useRef(null);
 
-  const handleUpload = async () => {
+ const handleUpload = async () => {
   if (!file) {
     alert('Please select a file first');
     return;
@@ -17,6 +17,8 @@ function App() {
 
   const formData = new FormData();
   formData.append('book', file);
+
+  setAudioUrl(''); // ✅ Add this line to clear previous audio
   setLoading(true);
 
   try {
