@@ -10,26 +10,27 @@ function App() {
   const alertSound = useRef(null);
 
   const handleUpload = async () => {
-    if (!file) {
-      alert('Please select a file first');
-      return;
-    }
+  if (!file) {
+    alert('Please select a file first');
+    return;
+  }
 
-    const formData = new FormData();
-    formData.append('book', file);
-    setLoading(true);
+  const formData = new FormData();
+  formData.append('book', file);
+  setLoading(true);
 
-    try {
-      const res = await axios.post('"https://readaloud-tbqf.onrender.com/upload", formData);
-      setAudioUrl(res.data.audioUrl);
-      setLoading(false);
-      alertSound.current.play(); // 🎉 Play success alert sound
-    } catch (err) {
-      console.error('Upload failed', err);
-      setLoading(false);
-      alert('Error occurred while converting the file.');
-    }
-  };
+  try {
+    const res = await axios.post("https://readaloud-tbqf.onrender.com/upload", formData);
+    setAudioUrl(res.data.audioUrl);
+    setLoading(false);
+    alertSound.current.play(); // 🎉 Play success alert sound
+  } catch (err) {
+    console.error('Upload failed', err);
+    setLoading(false);
+    alert('Error occurred while converting the file.');
+  }
+};
+
 
   return (
     <div className="flex items-center justify-between space-x-8">
